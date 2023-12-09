@@ -21,7 +21,8 @@ muon_tracks:
     - phi
     - ptfrac
     - dr_trackjet
-    # - dr_lepton # not available right now due to happy little accident in creating the ntuples
+    - dr_lepton
+    - qOverP
     - btagIp_d0
     - btagIp_z0SinTheta
     - btagIp_d0Uncertainty
@@ -37,6 +38,7 @@ muon_tracks:
     - numberOfPixelSplitHits
     - numberOfSCTHits
     - numberOfSCTSharedHits
+    - leptonID
   labels:
     - ftagTruthOriginLabel
     - ftagTruthTypeLabel
