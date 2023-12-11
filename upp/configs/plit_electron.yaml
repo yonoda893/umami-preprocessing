@@ -43,10 +43,10 @@ resampling:
   method: countup
   sampling_fraction: 1.0
   variables:
-    pt_track:
+    pt:
       bins: [[10_000, 50_000, 8], [50_000, 100_000, 5], [100_000, 500_000, 20], [500_000, 1_000_000, 5]]
-    eta_track:
-      bins: [[-2.47, 2.47, 40]]
+    eta:
+      bins: [[-2.47, -1.52, 8], [-1.37, 1.37, 22],[1.52, 2.47, 8]]
 
 # note: sensible defaults are defined in the PreprocessingConfig constructor
 global:
