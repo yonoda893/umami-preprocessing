@@ -53,6 +53,6 @@ global:
   jets_name: muons
   batch_size: 1_000_000
   num_jets_estimate: 5_000_000
-  base_dir: /nfs/dust/atlas/user/pgadow/plit/data/preprocessed/muons_30M
-  ntuple_dir: /nfs/dust/atlas/user/pgadow/plit/data/ntuples
-  out_dir: /nfs/dust/atlas/user/pgadow/plit/data/preprocessed/muons_30M
+  base_dir: /data/pgadow/atlas/plit/preprocessed/muons_30M
+  ntuple_dir: /data/pgadow/atlas/plit/ntuples
+  out_dir: /data/pgadow/atlas/plit/preprocessed/muons_30M

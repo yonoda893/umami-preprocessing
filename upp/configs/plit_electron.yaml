@@ -28,20 +28,20 @@ components:
     sample:
       <<: *ttbar
     flavours: [elxprompt]
-    num_jets: 20_000_000
+    num_jets: 4_000_000
 
   - region:
       <<: *electron
     sample:
       <<: *ttbar
     flavours: [npxall]
-    num_jets: 10_000_000
+    num_jets: 1_000_000
 
 
 resampling:
   target: elxprompt
   method: countup
-  sampling_fraction: auto
+  sampling_fraction: 1.0
   variables:
     pt_track:
       bins: [[10_000, 50_000, 8], [50_000, 100_000, 5], [100_000, 500_000, 20], [500_000, 1_000_000, 5]]
@@ -53,6 +53,6 @@ global:
   jets_name: electrons
   batch_size: 1_000_000
   num_jets_estimate: 5_000
-  base_dir: /nfs/dust/atlas/user/pgadow/plit/data/preprocessed/electrons_30M
-  ntuple_dir: /nfs/dust/atlas/user/pgadow/plit/data/ntuples
-  out_dir: /nfs/dust/atlas/user/pgadow/plit/data/preprocessed/electrons_30M
+  base_dir: /data/pgadow/atlas/plit/preprocessed/electrons_5M
+  ntuple_dir: /data/pgadow/atlas/plit/ntuples
+  out_dir: /data/pgadow/atlas/plit/preprocessed/electrons_5M
