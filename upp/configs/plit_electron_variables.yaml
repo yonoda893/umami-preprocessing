@@ -2,6 +2,7 @@ electrons:
   inputs:
     - pt
     - eta
+    - absEta
     - phi
     - ptvarcone30Rel
     - topoetcone30Rel

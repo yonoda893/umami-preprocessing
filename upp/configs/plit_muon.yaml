@@ -5,9 +5,18 @@ ttbar: &ttbar
   name: ttbar
   equal_jets: False
   pattern:
-    - "user.pgadow.LD_2023_12_07.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8547_s3797_r13144_p5934_TREE/*.h5"
-    - "user.pgadow.LD_2023_12_07.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8549_s4159_r14799_p5934_TREE/*.h5"
-    - "user.pgadow.LD_2023_12_07.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8549_s4162_r14622_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.410471.PhPy8EG_A14_ttbar_hdamp258p75_allhad.e6337_s3681_r13144_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.601237.PhPy8EG_A14_ttbar_hdamp258p75_allhad.e8514_s4111_r14622_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8547_s3797_r13144_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8549_s4159_r14799_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.601589.PhPy8EG_A14_ttbar_hdamp258p75_nonallhadron.e8549_s4162_r14622_p5934_TREE/*.h5"
+
+zprime: &zprime
+  name: zprime
+  equal_jets: False
+  pattern:
+    - "user.pgadow.LD_2023_12_20.800030.Py8EG_A14NNPDF23LO_flatpT_Zprime_Extended.e7954_s3681_r13144_p5934_TREE/*.h5"
+    - "user.pgadow.LD_2023_12_20.800030.Py8EG_A14NNPDF23LO_flatpT_Zprime_Extended.e8514_s4162_r14622_p5934_TREE/*.h5"
 
 global_cuts:
   train:
@@ -17,25 +26,25 @@ global_cuts:
   test:
     - [eventNumber, "%10==", 9]
 
-muon: &muon
-  name: muon
+lowpt: &lowpt
+  name: lowpt
   cuts:
     - [pt, ">", 10_000]
 
 components:
   - region:
-      <<: *muon
+      <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [muxprompt]
-    num_jets: 20_000_000
+    num_jets: 28_000_000
 
   - region:
-      <<: *muon
+      <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [npxall]
-    num_jets: 10_000_000
+    num_jets: 7_000_000
 
 
 resampling:
@@ -53,6 +62,6 @@ global:
   jets_name: muons
   batch_size: 1_000_000
   num_jets_estimate: 5_000_000
-  base_dir: /data/pgadow/atlas/plit/preprocessed/muons_30M
+  base_dir: /data/pgadow/atlas/plit/preprocessed/muons_35M
   ntuple_dir: /data/pgadow/atlas/plit/ntuples
-  out_dir: /data/pgadow/atlas/plit/preprocessed/muons_30M
+  out_dir: /data/pgadow/atlas/plit/preprocessed/muons_35M

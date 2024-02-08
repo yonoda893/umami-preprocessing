@@ -30,11 +30,13 @@ lowpt: &lowpt
   name: lowpt
   cuts:
     - [pt, ">", 10_000]
+    - [absEta, "<", 1.37]
 
 highpt: &highpt
   name: highpt
   cuts:
     - [pt, ">", 100_000]
+    - [absEta, "<", 1.37]
 
 components:
   - region:
@@ -42,28 +44,28 @@ components:
     sample:
       <<: *ttbar
     flavours: [elxprompt]
-    num_jets: 12_800_000
+    num_jets: 8_800_000
 
   - region:
       <<: *lowpt
     sample:
       <<: *ttbar
     flavours: [npxall]
-    num_jets: 3_200_000
+    num_jets: 2_200_000
 
   - region:
       <<: *highpt
     sample:
       <<: *zprime
     flavours: [elxprompt]
-    num_jets: 1_600_000
+    num_jets: 1_200_000
 
   - region:
       <<: *highpt
     sample:
       <<: *zprime
     flavours: [npxall]
-    num_jets: 400_000
+    num_jets: 300_000
 
 resampling:
   target: elxprompt
@@ -73,12 +75,12 @@ resampling:
     pt:
       bins: [[10_000, 50_000, 8], [50_000, 100_000, 5], [100_000, 500_000, 5], [500_000, 2_000_000, 3]]
     eta:
-      bins: [[-2.47, -1.52, 8], [-1.37, 1.37, 22],[1.52, 2.47, 8]]
+      bins: [[-1.37, 1.37, 22]]
 # note: sensible defaults are defined in the PreprocessingConfig constructor
 global:
   jets_name: electrons
   batch_size: 1_000_000
-  num_jets_estimate: 3_000_000
-  base_dir: /data/pgadow/atlas/plit/preprocessed/electrons_test
+  num_jets_estimate: 2_000_000
+  base_dir: /data/pgadow/atlas/plit/preprocessed/electrons_hybrid_barrel
   ntuple_dir: /data/pgadow/atlas/plit/ntuples
-  out_dir: /data/pgadow/atlas/plit/preprocessed/electrons_test
+  out_dir: /data/pgadow/atlas/plit/preprocessed/electrons_hybrid_barrel

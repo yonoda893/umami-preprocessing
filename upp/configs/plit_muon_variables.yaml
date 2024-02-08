@@ -2,6 +2,7 @@ muons:
   inputs:
     - pt
     - eta
+    - absEta
     - phi
     - ptvarcone30TTVARel
     - topoetcone30Rel
