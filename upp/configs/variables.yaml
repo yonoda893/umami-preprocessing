@@ -6,6 +6,11 @@ jets:
     - HadronConeExclTruthLabelID
     - HadronConeExclTruthLabelPt
     - HadronConeExclTruthLabelLxy
+    - HadronGhostTruthLabelID
+    - PartonTruthLabelID
+    - HadronGhostTruthLabelKsLambdaID
+    - HadronGhostTruthLabelDecayradiusID
+    - HadronGhostTruthLabelDecaymodeID
     - pt
     - eta
     - mass

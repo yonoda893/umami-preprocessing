@@ -34,7 +34,7 @@ components:
       <<: *lowpt
     sample:
       <<: *ttbar
-    flavours: [ghostbjets, ghostcjets]
+    flavours: [hadronghostdecaymodebjets, hadronghostdecaymodecjets]
     num_jets: 4_500_000
     equal_jets: False
 
@@ -42,7 +42,7 @@ components:
       <<: *lowpt
     sample:
       <<: *ttbar
-    flavours: [ghostsjets]
+    flavours: [hadronghostdecaymodesjets]
     num_jets: 1_800_000
     equal_jets: False
   
@@ -50,7 +50,7 @@ components:
       <<: *lowpt
     sample:
       <<: *ttbar
-    flavours: [ghostujets]
+    flavours: [hadronghostdecaymodelightjets]
     num_jets: 7_200_000
     equal_jets: False
 
@@ -58,7 +58,7 @@ components:
       <<: *lowpt
     sample:
       <<: *ttbar
-    flavours: [ghosttaujets]
+    flavours: [hadronghostdecaymodetaujets]
     num_jets: 625_000
     equal_jets: False
 
@@ -66,7 +66,7 @@ components:
       <<: *highpt
     sample:
       <<: *zprime
-    flavours: [ghostbjets, ghostcjets]
+    flavours: [hadronghostdecaymodebjets, hadronghostdecaymodecjets]
     num_jets: 1_800_000
     equal_jets: False 
 
@@ -74,7 +74,7 @@ components:
       <<: *highpt
     sample:
       <<: *zprime
-    flavours: [ghostsjets]
+    flavours: [hadronghostdecaymodesjets]
     num_jets: 720_000
     equal_jets: False
   
@@ -82,7 +82,7 @@ components:
       <<: *highpt
     sample:
       <<: *zprime
-    flavours: [ghostujets]
+    flavours: [hadronghostdecaymodelightjets]
     num_jets: 2_880_000
     equal_jets: False
 
@@ -90,13 +90,13 @@ components:
       <<: *highpt
     sample:
       <<: *zprime
-    flavours: [ghosttaujets]
+    flavours: [hadronghostdecaymodetaujets]
     num_jets: 250_000
     equal_jets: False
 
 
 resampling:
-  target: ghostcjets
+  target: hadronghostdecaymodecjets
   method: countup
   sampling_fraction: auto
   variables:
@@ -108,7 +108,7 @@ resampling:
 # note: sensible defaults are defined in the PreprocessingConfig constructor
 global:
   jets_name: jets
-  batch_size: 1_000_000
-  num_jets_estimate: 25_000_000
-  base_dir: /gpfs/fs8001/yonoda/strangelabelling_resampling_parton
+  batch_size: 100_000
+  num_jets_estimate: 2_500_000
+  base_dir: /gpfs/fs8001/yonoda/strangelabelling_resampling_decaymode
   ntuple_dir: /gpfs/fs8001/yonoda/strangelabelling_h5
